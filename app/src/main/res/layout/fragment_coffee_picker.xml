@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CoffeePickerFragment"
+    android:background="@color/colorPrimary"
+    >
+
+
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+
+        android:weightSum="0.9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:gravity="center"
+
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="271dp"
+                android:layout_height="145dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:clickable="true"
+                android:src="@drawable/ic_small_01" />
+
+            <TextView
+                android:layout_width="426dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.15"
+                android:gravity="center"
+                android:text="@string/coffee_small"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/smallDetalisText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.05"
+                android:gravity="center"
+                android:text="Details: 200ml"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:orientation="vertical"
+
+            android:weightSum="1">
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="161dp"
+                android:layout_height="146dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:clickable="true"
+                android:src="@drawable/ic_medium_01" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.15"
+                android:gravity="center"
+                android:text="@string/coffee_mid"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/smallDetalisText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.05"
+                android:gravity="center"
+                android:text="Details: 250ml"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="386dp"
+                android:layout_height="187dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:clickable="true"
+                android:src="@drawable/large" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.15"
+                android:gravity="center"
+                android:text="@string/coffee_lg"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/smallDetalisText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.05"
+                android:gravity="center"
+                android:text="Details: 300ml"
+                android:textColor="@color/colorPrimaryDark" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>
