@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_coffee">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -20,6 +20,16 @@
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.coffeetracker.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="Personalize"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_coffee"
+        android:name="com.example.coffeetracker.ui.CoffeePickerFragment"
+        android:label="@string/coffee_title_track"
+        tools:layout="@layout/fragment_coffee_picker" />
+    <fragment
+        android:id="@+id/navigation_statistics"
+        android:name="com.example.coffeetracker.ui.StatisticsFragment"
+        android:label="@string/coffee_statistics"
+        tools:layout="@layout/fragment_statistics" />
 </navigation>
