@@ -4,7 +4,7 @@
     <item
         android:id="@+id/navigation_coffee"
         android:icon="@drawable/ic_coffee_black"
-        android:title="@string/coffee_title_track" />
+        android:title="@string/coffee_title_tracking" />
 
     <item
         android:id="@+id/navigation_statistics"
@@ -12,7 +12,7 @@
         android:title="@string/coffee_statistics" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_settings_black_24dp"
         android:title="@string/coffee_settings" />
 
