@@ -25,7 +25,7 @@
         app:layout_constraintWidth_percent="0.5">
 
         <TextView
-            android:id="@+id/act_coffe_today_title"
+            android:id="@+id/frag_coffe_today_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Coffee Today"
@@ -34,7 +34,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/act_coffee_today_count"
+            android:id="@+id/frag_coffee_today_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -61,7 +61,7 @@
         app:layout_constraintWidth_percent="0.5">
 
         <TextView
-            android:id="@+id/act_coffe_week_title"
+            android:id="@+id/frag_coffe_week_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="This week"
@@ -70,7 +70,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/act_coffee_week_count"
+            android:id="@+id/frag_coffee_week_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"

@@ -20,21 +20,21 @@
         app:layout_constraintVertical_bias="0.1">
 
         <TextView
-            android:id="@+id/act_user_name"
+            android:id="@+id/frag_user_name"
             android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="Name:"
-            android:textStyle="bold"
             android:textColor="@color/colorSecondary"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/frag_user_name_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
             android:layout_marginEnd="8dp"
+            android:background="#FFFFFF"
             android:ems="10"
             android:hint="Jon Jonescu" />
 
@@ -52,22 +52,22 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/act_user_height"
+            android:id="@+id/frag_user_height"
             android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="Height:"
-            android:textStyle="bold"
             android:textColor="@color/colorSecondary"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText10"
+            android:id="@+id/frag_user_height_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:background="#FFFFFF"
             android:layout_marginEnd="8dp"
+            android:background="#FFFFFF"
+            android:ems="10"
             android:hint="170 cm"
             android:inputType="number" />
     </LinearLayout>
@@ -84,22 +84,22 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/act_user_weight"
+            android:id="@+id/frag_user_weight"
             android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="Weight:"
-            android:textStyle="bold"
             android:textColor="@color/colorSecondary"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText11"
+            android:id="@+id/frag_user_weight_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:background="#FFFFFF"
             android:layout_marginEnd="8dp"
+            android:background="#FFFFFF"
+            android:ems="10"
             android:hint="70 kg"
             android:inputType="number" />
     </LinearLayout>
@@ -116,24 +116,24 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/act_user_age"
+            android:id="@+id/frag_user_age"
             android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="Age:"
-            android:textStyle="bold"
             android:textColor="@color/colorSecondary"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText12"
+            android:id="@+id/frag_user_age_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:background="#FFFFFF"
             android:layout_marginEnd="8dp"
-            android:inputType="number"
-            android:hint="20"/>
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="20"
+            android:inputType="number" />
     </LinearLayout>
 
     <LinearLayout
@@ -148,34 +148,36 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/act_user_gender"
+            android:id="@+id/frag_user_gender"
             android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="Gender:"
-            android:textStyle="bold"
             android:textColor="@color/colorSecondary"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:checkedButton="@id/act_radio_male_gender">
+            android:checkedButton="@id/frag_radio_male_gender"
+            android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/act_radio_male_gender"
+                android:id="@+id/frag_radio_male_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male"
-                />
+                android:textColor="@color/colorSecondary"
+                android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/act_radio_female_gender"
+                android:id="@+id/frag_radio_female_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Female"
-                />
+                android:textColor="@color/colorSecondary"
+                android:textStyle="bold" />
         </RadioGroup>
 
 
@@ -193,49 +195,63 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/act_user_set_coffee"
+            android:id="@+id/frag_user_set_coffee"
             android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="Set coffee"
-            android:textStyle="bold"
             android:textColor="@color/colorSecondary"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/act_user_small_coffee"
+            android:id="@+id/frag_user_small_coffee_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorSecondary"
+            android:minHeight="24dp"
             android:text="@string/coffee_small"
-            android:minHeight="24dp"
-            android:backgroundTint="@color/colorSecondary"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/act_user_medium_coffee"
+            android:id="@+id/frag_user_medium_coffee_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorSecondary"
+            android:minHeight="24dp"
             android:text="@string/coffee_medium"
-            android:minHeight="24dp"
-            android:backgroundTint="@color/colorSecondary"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/act_user_large_coffee"
+            android:id="@+id/frag_user_large_coffee_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:text="@string/coffee_large"
-            android:minHeight="24dp"
             android:backgroundTint="@color/colorSecondary"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary" />
+            android:minHeight="24dp"
+            android:text="@string/coffee_large"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/rating_test_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="164dp"
+        android:text="Go to rating test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintVertical_bias="0.773" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

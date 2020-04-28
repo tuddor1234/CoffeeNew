@@ -11,4 +11,10 @@
     <string name="coffee_small">Small</string>
     <string name="coffee_medium">Normal</string>
     <string name="coffee_large">Large</string>
+    <string name="productivity_rating">Productivity</string>
+    <string name="very_unproductive_rating">Very unproductive...</string>
+    <string name="unproductive_rating">Unproductive</string>
+    <string name="neutral_rating">Neutral</string>
+    <string name="productive_rating">Productive</string>
+    <string name="very_productive_rating">Very productive!</string>
 </resources>

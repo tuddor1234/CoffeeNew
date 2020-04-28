@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navigation_coffee"
         android:name="com.example.coffeetracker.ui.CoffeePickerFragment"
-        android:label="@string/coffee_title_tracking"
+        android:label="@string/productivity_rating"
         tools:layout="@layout/fragment_coffee_picker" />
     <fragment
         android:id="@+id/navigation_statistics"
@@ -19,4 +19,8 @@
         android:id="@+id/navigation_settings"
         android:name="com.example.coffeetracker.ui.SettingsFragment"
         android:label="@string/coffee_settings" />
+    <activity
+        android:id="@+id/rating_activity"
+        android:name="com.example.coffeetracker.RatingActivity"
+        android:label="RatingActivity" />
 </navigation>

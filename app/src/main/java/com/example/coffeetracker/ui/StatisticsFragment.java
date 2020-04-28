@@ -13,8 +13,6 @@ import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
-import com.anychart.chart.common.listener.Event;
-import com.anychart.chart.common.listener.ListenersInterface;
 import com.anychart.charts.Pie;
 import com.example.coffeetracker.R;
 
@@ -65,28 +63,32 @@ public class StatisticsFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-        // Tried to use Any Chart in this fragment
-
-//        AnyChartView anyChartView = (AnyChartView) getView().findViewById(R.id.any_chart_view);
-//        APIlib.getInstance().setActiveAnyChartView(anyChartView);
-//        Pie pie = AnyChart.pie();
-//
-//        List<DataEntry> data = new ArrayList<>();
-//        data.add(new ValueDataEntry("John", 10000));
-//        data.add(new ValueDataEntry("Jake", 12000));
-//        data.add(new ValueDataEntry("Peter", 18000));
-//
-//        pie.data(data);
-//        pie.background().fill("#302B2D");
-//
-//        anyChartView.setChart(pie);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_statistics, container, false);
+
+
+        // Any Chart pie example
+
+        AnyChartView anyChartView = view.findViewById(R.id.any_chart_view);
+        APIlib.getInstance().setActiveAnyChartView(anyChartView);
+        Pie pie = AnyChart.pie();
+
+        List<DataEntry> data = new ArrayList<>();
+        data.add(new ValueDataEntry("Small Coffee", 100));
+        data.add(new ValueDataEntry("Huge Coffee", 120));
+        data.add(new ValueDataEntry("Tasty Coffee", 180));
+
+        pie.data(data);
+        pie.background().fill("#302B2D");
+
+        anyChartView.setChart(pie);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_statistics, container, false);
+        return view;
     }
 }
