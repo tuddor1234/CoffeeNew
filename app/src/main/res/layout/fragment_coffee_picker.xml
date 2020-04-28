@@ -1,148 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.CoffeePickerFragment"
     android:background="@color/colorPrimary"
-    >
+    tools:context=".ui.CoffeePickerFragment">
 
+    <ImageView
+        android:id="@+id/frag_small_coffee_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:src="@drawable/ic_fsmall_01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/frag_medium_coffee_img"
+        app:layout_constraintTop_toTopOf="parent"
 
+        app:layout_constraintDimensionRatio="4:5"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/frag_medium_coffee_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:src="@drawable/ic_fmedium_01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:5"
+        app:layout_constraintHeight_percent=".33"
+
+        app:layout_constraintStart_toStartOf="@+id/frag_large_coffee_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/frag_large_coffee_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_flarge_01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:5"
+        app:layout_constraintHeight_percent=".33"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:5"
 
-        android:weightSum="0.9">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/frag_small_coffee_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <TextView
+            android:id="@+id/frag_small_coffee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/coffee_small"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorSecondary" />
 
-            android:layout_gravity="center"
-            android:layout_weight="0.3"
+        <TextView
+            android:id="@+id/frag_small_coffee_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details: 100ml"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:5"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/frag_small_coffee_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+
+        <TextView
+            android:id="@+id/frag_medium_coffee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/coffee_medium"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorSecondary" />
+
+        <TextView
+            android:id="@+id/frag_medium_coffee_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details: 200ml"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondary" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:5"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/frag_small_coffee_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/frag_large_coffee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/coffee_large"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorSecondary" />
+
+        <TextView
+            android:id="@+id/frag_large_coffee_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="Details: 300ml"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondary" />
 
-            android:orientation="vertical"
-            android:weightSum="1">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="271dp"
-                android:layout_height="145dp"
-                android:layout_gravity="center"
-                android:layout_weight="0.8"
-                android:clickable="true"
-                android:src="@drawable/ic_small_01" />
-
-            <TextView
-                android:layout_width="426dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.15"
-                android:gravity="center"
-                android:text="@string/coffee_small"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <TextView
-                android:id="@+id/smallDetalisText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.05"
-                android:gravity="center"
-                android:text="Details: 200ml"
-                android:textColor="@color/colorPrimaryDark" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="0.3"
-            android:orientation="vertical"
-
-            android:weightSum="1">
-
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="161dp"
-                android:layout_height="146dp"
-                android:layout_gravity="center"
-                android:layout_weight="0.8"
-                android:clickable="true"
-                android:src="@drawable/ic_medium_01" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.15"
-                android:gravity="center"
-                android:text="@string/coffee_mid"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <TextView
-                android:id="@+id/smallDetalisText2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.05"
-                android:gravity="center"
-                android:text="Details: 250ml"
-                android:textColor="@color/colorPrimaryDark" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="0.3"
-            android:orientation="vertical"
-            android:weightSum="1">
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="386dp"
-                android:layout_height="187dp"
-                android:layout_gravity="center"
-                android:layout_weight="0.8"
-                android:clickable="true"
-                android:src="@drawable/large" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="41dp"
-                android:layout_gravity="center"
-                android:layout_weight="0.15"
-                android:gravity="center"
-                android:text="@string/coffee_lg"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <TextView
-                android:id="@+id/smallDetalisText3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.05"
-                android:gravity="center"
-                android:text="Details: 300ml"
-                android:textColor="@color/colorPrimaryDark" />
-        </LinearLayout>
     </LinearLayout>
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

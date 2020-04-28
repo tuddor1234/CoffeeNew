@@ -8,8 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.anychart.APIlib;
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Pie;
 import com.example.coffeetracker.R;
 
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,7 +68,27 @@ public class StatisticsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_statistics, container, false);
+
+
+        // Any Chart pie example
+
+        AnyChartView anyChartView = view.findViewById(R.id.any_chart_view);
+        APIlib.getInstance().setActiveAnyChartView(anyChartView);
+        Pie pie = AnyChart.pie();
+
+        List<DataEntry> data = new ArrayList<>();
+        data.add(new ValueDataEntry("Small Coffee", 100));
+        data.add(new ValueDataEntry("Huge Coffee", 120));
+        data.add(new ValueDataEntry("Tasty Coffee", 180));
+
+        pie.data(data);
+        pie.background().fill("#302B2D");
+
+        anyChartView.setChart(pie);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_statistics, container, false);
+        return view;
     }
 }

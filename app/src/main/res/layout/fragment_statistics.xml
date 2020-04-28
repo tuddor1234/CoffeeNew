@@ -1,24 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AC0000"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.StatisticsFragment">
 
 
-    tools:context=".ui.StatisticsFragment" >
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="305dp"
-        android:layout_height="211dp"
-        android:text="TEST"
-        android:textSize="49dp"
-        android:layout_gravity="center"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:gravity="center"
-        />
-</FrameLayout>
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.5">
+
+        <TextView
+            android:id="@+id/frag_coffe_today_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coffee Today"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondary"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/frag_coffee_today_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondary"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.5">
+
+        <TextView
+            android:id="@+id/frag_coffe_week_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This week"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondary"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/frag_coffee_week_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondary"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <com.anychart.AnyChartView
+        android:id="@+id/any_chart_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
