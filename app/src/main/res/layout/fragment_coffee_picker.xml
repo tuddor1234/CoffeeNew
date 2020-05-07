@@ -13,13 +13,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clickable="true"
+        android:contextClickable="true"
+        android:onClick="registerCoffee"
         android:src="@drawable/ic_fsmall_01"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/frag_medium_coffee_img"
-        app:layout_constraintTop_toTopOf="parent"
-
         app:layout_constraintDimensionRatio="4:5"
         app:layout_constraintHeight_percent=".33"
+
+        app:layout_constraintStart_toStartOf="@+id/frag_medium_coffee_img"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
@@ -27,6 +29,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clickable="true"
+        android:contextClickable="true"
+        android:onClick="registerCoffee"
         android:src="@drawable/ic_fmedium_01"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="4:5"
@@ -40,6 +44,8 @@
         android:id="@+id/frag_large_coffee_img"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contextClickable="true"
+        android:onClick="registerCoffee"
         android:src="@drawable/ic_flarge_01"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="4:5"
@@ -69,17 +75,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/coffee_small"
-            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorSecondary" />
+            android:textColor="@color/colorSecondary"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/frag_small_coffee_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Details: 100ml"
-            android:textStyle="bold"
-            android:textColor="@color/colorSecondary" />
+            android:textColor="@color/colorSecondary"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -102,17 +108,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/coffee_medium"
-            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorSecondary" />
+            android:textColor="@color/colorSecondary"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/frag_medium_coffee_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Details: 200ml"
-            android:textStyle="bold"
-            android:textColor="@color/colorSecondary" />
+            android:textColor="@color/colorSecondary"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -135,9 +141,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/coffee_large"
-            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorSecondary" />
+            android:textColor="@color/colorSecondary"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/frag_large_coffee_details"
@@ -145,8 +151,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Details: 300ml"
-            android:textStyle="bold"
-            android:textColor="@color/colorSecondary" />
+            android:textColor="@color/colorSecondary"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

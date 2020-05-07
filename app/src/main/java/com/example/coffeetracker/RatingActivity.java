@@ -56,7 +56,6 @@ public class RatingActivity extends AppCompatActivity {
                 if ((int) ratingBar.getRating() > 0) {
                     String rating = "Your rating has been registered.";
                     Toast.makeText(RatingActivity.this, rating, Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(RatingActivity.this, CoffeePickerFragment.class);
                     finishAffinity();
                 } else {
                     String rating = "Please rate your productivity.";
