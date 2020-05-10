@@ -167,6 +167,7 @@
                 android:id="@+id/frag_radio_male_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="@color/colorRadioButton"
                 android:text="Male"
                 android:textColor="@color/colorSecondary"
                 android:textStyle="bold" />
@@ -175,6 +176,7 @@
                 android:id="@+id/frag_radio_female_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="@color/colorRadioButton"
                 android:text="Female"
                 android:textColor="@color/colorSecondary"
                 android:textStyle="bold" />
