@@ -3,11 +3,16 @@ package com.example.coffeetracker.ui;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.coffeetracker.Coffee;
+import com.example.coffeetracker.CoffeeViewModel;
 import com.example.coffeetracker.R;
 
 import java.util.ArrayList;
@@ -31,6 +36,12 @@ public class StatisticsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+
+    private CoffeeViewModel coffeeViewModel;
+
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -65,6 +76,9 @@ public class StatisticsFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        coffeeViewModel= new ViewModelProvider(this).get(CoffeeViewModel.class);
+
     }
 
     @Override
@@ -81,6 +95,11 @@ public class StatisticsFragment extends Fragment {
     private void createActivityLevelChart(View v) {
 
         final int NR_DAYS_SEEN_ON_SCREEN = 5;
+
+//        LiveData<List<Coffee>> coffees = coffeeViewModel.getAllCoffees();
+
+   //     Log.d("Coffees:",coffees.toString());
+
 
         //TODO Astea tre sa fie trimise din DB. yAxisData o sa fie notele de productivitate si cofeeConsumed e nr de cafele baute
         String[] xAxisData = {"May 4", "May 5", "May 6", "May 7", "May 8", "May 9", "May 10", "May 11", "May 12", "May 13", "May 14", "May 15",
@@ -158,4 +177,10 @@ public class StatisticsFragment extends Fragment {
         lineChartView.setCurrentViewport(viewport);
         lineChartView.setViewportCalculationEnabled(false);
     }
+
+
+
+
+
+
 }

@@ -7,12 +7,15 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,11 +23,17 @@ import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
 
+    CoffeeFactory factory = new CoffeeFactory();
+
+
+    CoffeeViewModel coffeeViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         createNotificationChannel();
+
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -36,19 +45,43 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+        coffeeViewModel =   new ViewModelProvider(this).get(CoffeeViewModel.class);
+
+
     }
 
     public void registerCoffee(View view) {
 
+
+
         // Separate the cases for each type of coffee
         switch (view.getId()) {
             case R.id.frag_small_coffee_img:
+
+                Coffee smallCoffee = factory.createCoffee("SMALL");
+
+
+                if(smallCoffee != null)
+                     coffeeViewModel.insert(smallCoffee);
+
                 Toast.makeText(MainActivity.this, "Small coffee registered", Toast.LENGTH_LONG).show();
                 break;
             case R.id.frag_medium_coffee_img:
+
+                Coffee midCoffee = factory.createCoffee("MEDIUM");
+
+                if(midCoffee != null)
+                    coffeeViewModel.insert(midCoffee);
+
                 Toast.makeText(MainActivity.this, "Medium coffee registered", Toast.LENGTH_LONG).show();
                 break;
             case R.id.frag_large_coffee_img:
+
+                Coffee largeCoffee = factory.createCoffee("LARGE");
+
+                if(largeCoffee != null)
+                     coffeeViewModel.insert(largeCoffee);
+
                 Toast.makeText(MainActivity.this, "Large coffee registered", Toast.LENGTH_LONG).show();
                 break;
         }
