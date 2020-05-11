@@ -83,7 +83,7 @@
             android:id="@+id/frag_small_coffee_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Details: 100ml"
+            android:text="Caffeine: 100 mg"
             android:textColor="@color/colorSecondary"
             android:textStyle="bold" />
     </LinearLayout>
@@ -116,7 +116,7 @@
             android:id="@+id/frag_medium_coffee_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Details: 200ml"
+            android:text="Caffeine: 200 mg"
             android:textColor="@color/colorSecondary"
             android:textStyle="bold" />
 
@@ -149,8 +149,7 @@
             android:id="@+id/frag_large_coffee_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Details: 300ml"
+            android:text="Caffeine: 300 mg"
             android:textColor="@color/colorSecondary"
             android:textStyle="bold" />
 

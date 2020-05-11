@@ -7,7 +7,9 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,6 +19,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void registerCoffee(View view) {
+
+        final int DANGER_HOUR = 17;
+        if(Calendar.getInstance().getTime().getHours() > DANGER_HOUR)
+           Toast.makeText(MainActivity.this, "Consider avoiding drinking coffee at least 7 hours before going to bed", Toast.LENGTH_LONG).show();
 
         // Separate the cases for each type of coffee
         switch (view.getId()) {
