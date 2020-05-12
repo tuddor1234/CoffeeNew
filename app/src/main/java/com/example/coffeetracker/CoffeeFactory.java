@@ -1,43 +1,28 @@
 package com.example.coffeetracker;
 
-import android.icu.text.SimpleDateFormat;
-
 import java.util.Calendar;
 import java.util.Date;
 
 public class CoffeeFactory {
 
-    private static int nextID = 0;
+    public Coffee createCoffee(String type) {
+        Date date = Calendar.getInstance().getTime();
 
-    public Coffee createCoffee(String type)
-    {
-        Date c = Calendar.getInstance().getTime();
-        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-        String formattedDate = df.format(c);
+        if (type == null) return null;
 
-        if(type == null) return  null;
+        if (type.equalsIgnoreCase("SMALL")) {
+            // Small coffee
+            return new Coffee(0, 10, 40, 0, 0, date);
 
-        nextID++;
-        if(type.equalsIgnoreCase("SMALL"))
-        {
-            // SMALL COFFEE
-            return new Coffee(nextID, 0,10,10,0,0, formattedDate );
+        } else if (type.equalsIgnoreCase("MEDIUM")) {
+            // Medium coffee
+            return new Coffee(1, 20, 60, 0, 0, date);
+
+        } else if (type.equalsIgnoreCase("LARGE")) {
+            // Small coffee
+            return new Coffee(2, 30, 80, 0, 0, date);
+        } else {
+            return null;
         }
-        else if(type.equalsIgnoreCase("MEDIUM"))
-        {
-            // SMALL COFFEE
-            return new Coffee(nextID, 0,20,20,0,0, formattedDate );
-        }
-        else if(type.equalsIgnoreCase("LARGE"))
-        {
-            // SMALL COFFEE
-            return new Coffee(nextID, 0,30,30,0,0, formattedDate );
-        }
-
-        else return null;
-
     }
-
-
-
 }
