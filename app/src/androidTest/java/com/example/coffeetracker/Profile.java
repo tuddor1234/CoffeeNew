@@ -1,5 +1,7 @@
 package com.example.coffeetracker;
 
+import android.app.Activity;
+import android.app.Application;
 import android.icu.text.SimpleDateFormat;
 
 import java.util.Calendar;
@@ -8,6 +10,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Vector;
+
+import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 
 public class Profile {
 
@@ -110,6 +114,25 @@ public class Profile {
         }
 
     }
+
+    public static void main(String[] args) {
+
+        CoffeeFactory cf = new CoffeeFactory();
+
+        Coffee coffee  = cf.createCoffee("LARGE");
+
+        CoffeeDatabase database  = CoffeeDatabase.getInstance(getApplicationContext());
+
+        database.coffeeDao().insert(coffee);
+        System.out.println("--------------------------");
+        System.out.println(database.coffeeDao().getCoffeeList());
+        System.out.println("--------------------------");
+    }
+
+
+
+
+
 }
 
 
