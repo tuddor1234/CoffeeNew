@@ -7,7 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import com.example.coffeetracker.components.Converters;
+import com.example.coffeetracker.components.utils.Converters;
 
 @Database(entities = Coffee.class, exportSchema = false, version = 3)
 @TypeConverters({Converters.class})
