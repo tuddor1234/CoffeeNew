@@ -1,4 +1,4 @@
-package com.example.coffeetracker.ui;
+package com.example.coffeetracker.components;
 
 import androidx.room.TypeConverter;
 

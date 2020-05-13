@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/navigation_coffee"
-        android:name="com.example.coffeetracker.ui.CoffeePickerFragment"
+        android:name="com.example.coffeetracker.components.fragments.CoffeePickerFragment"
         android:label="@string/productivity_rating"
         tools:layout="@layout/fragment_coffee_picker" />
     <fragment
         android:id="@+id/navigation_statistics"
-        android:name="com.example.coffeetracker.ui.StatisticsFragment"
+        android:name="com.example.coffeetracker.components.fragments.StatisticsFragment"
         android:label="@string/coffee_statistics"
         tools:layout="@layout/fragment_statistics" />
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.coffeetracker.ui.SettingsFragment"
+        android:name="com.example.coffeetracker.components.fragments.SettingsFragment"
         android:label="@string/coffee_settings" />
     <activity
         android:id="@+id/rating_activity"

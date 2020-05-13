@@ -1,18 +1,17 @@
-package com.example.coffeetracker.ui;
+package com.example.coffeetracker.components.fragments;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.Observer;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import com.example.coffeetracker.Coffee;
-import com.example.coffeetracker.CoffeeViewModel;
+import com.example.coffeetracker.MainActivity;
 import com.example.coffeetracker.R;
 
 import java.util.ArrayList;
@@ -36,11 +35,6 @@ public class StatisticsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-
-    private CoffeeViewModel coffeeViewModel;
-
-
 
 
     // TODO: Rename and change types of parameters
@@ -76,9 +70,6 @@ public class StatisticsFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-        coffeeViewModel= new ViewModelProvider(this).get(CoffeeViewModel.class);
-
     }
 
     @Override
@@ -87,21 +78,65 @@ public class StatisticsFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_statistics, container, false);
         createActivityLevelChart(view);
+        setStatistics(view);
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    // Update the fields for each attribute in the top of Statistics fragment
+    private void setStatistics(View view) {
+
+        MainActivity mainActivity = (MainActivity) getActivity();
+
+        // Set coffee numbers in real time
+        final TextView coffeeNrToday_TW = view.findViewById(R.id.frag_coffee_today_count);
+
+        LiveData<Integer> coffeeNrToday = mainActivity.getCOFFEE_TODAY();
+        coffeeNrToday.observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                coffeeNrToday_TW.setText(integer.toString() + " coffee/s");
+            }
+        });
+
+        final TextView coffeeNrWeek_TW = view.findViewById(R.id.frag_coffee_week_count);
+
+        LiveData<Integer> coffeeNrWeek = mainActivity.getCOFFEE_WEEK();
+        coffeeNrWeek.observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                coffeeNrWeek_TW.setText(integer.toString() + " coffee/s");
+            }
+        });
+
+        // Set caffeine levels in realtime
+        final TextView caffeineToday_TW = view.findViewById(R.id.frag_caffeine_today_count);
+
+        LiveData<Integer> caffeineToday = mainActivity.getCAFFEINE_TODAY();
+        caffeineToday.observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                    caffeineToday_TW.setText(integer.toString() + " mg caffeine");
+            }
+        });
+
+        final TextView caffeineWeek_TW = view.findViewById(R.id.frag_caffeine_week_count);
+
+        LiveData<Integer> caffeineWeek = mainActivity.getCAFFEINE_WEEK();
+        caffeineWeek.observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                caffeineWeek_TW.setText(integer.toString() + " mg caffeine");
+            }
+        });
     }
 
     private void createActivityLevelChart(View v) {
 
         final int NR_DAYS_SEEN_ON_SCREEN = 5;
 
-//        LiveData<List<Coffee>> coffees = coffeeViewModel.getAllCoffees();
-
-   //     Log.d("Coffees:",coffees.toString());
-
-
-        //TODO Astea tre sa fie trimise din DB. yAxisData o sa fie notele de productivitate si cofeeConsumed e nr de cafele baute
+        //TODO Must be connected with the DB. yAxisData should be the productivity grades, coffeeConsumed the number of coffee from that day
         String[] xAxisData = {"May 4", "May 5", "May 6", "May 7", "May 8", "May 9", "May 10", "May 11", "May 12", "May 13", "May 14", "May 15",
                 "May 16", "MAy 17", "May 18", "May 19", "May 20", "May 21", "May 22", "May 23", "May 24", "May 25", "May 26",
                 "May 27", "May 28", "May 30", "May 31", "Jun 1", "Jun 2", "Jun 3"};
@@ -177,10 +212,4 @@ public class StatisticsFragment extends Fragment {
         lineChartView.setCurrentViewport(viewport);
         lineChartView.setViewportCalculationEnabled(false);
     }
-
-
-
-
-
-
 }

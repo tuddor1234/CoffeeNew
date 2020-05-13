@@ -8,34 +8,34 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
-import android.view.Gravity;
-
-import android.util.Log;
-
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.coffeetracker.components.utils.CoffeeFactory;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
-    CoffeeFactory factory = new CoffeeFactory();
+    public CoffeeFactory factory = new CoffeeFactory();
 
 
     CoffeeViewModel coffeeViewModel;
+    LiveData<Integer> COFFEE_TODAY;
+    LiveData<Integer> CAFFEINE_TODAY;
+    LiveData<Integer> COFFEE_WEEK;
+    LiveData<Integer> CAFFEINE_WEEK;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,34 +54,55 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        coffeeViewModel =   new ViewModelProvider(this).get(CoffeeViewModel.class);
+        coffeeViewModel = new ViewModelProvider(this).get(CoffeeViewModel.class);
+        coffeeViewModel.getAllCoffees().observe(this, new Observer<List<Coffee>>() {
+            @Override
+            public void onChanged(List<Coffee> coffees) {
+                System.out.println(coffees);
+            }
+        });
+        COFFEE_TODAY = coffeeViewModel.getCoffeeNrToday();
+        CAFFEINE_TODAY = coffeeViewModel.getCaffeine();
+        COFFEE_WEEK = coffeeViewModel.getCoffeeNrThisWeek();
+        CAFFEINE_WEEK = coffeeViewModel.getCaffeineThisWeek();
+    }
 
+    public LiveData<Integer> getCOFFEE_TODAY() {
+        return COFFEE_TODAY;
+    }
 
+    public LiveData<Integer> getCAFFEINE_TODAY() {
+        return CAFFEINE_TODAY;
+    }
+
+    public LiveData<Integer> getCAFFEINE_WEEK() {
+        return CAFFEINE_WEEK;
+    }
+
+    public LiveData<Integer> getCOFFEE_WEEK() {
+        return COFFEE_WEEK;
     }
 
     public void registerCoffee(View view) {
 
-        final int DANGER_HOUR = 17;
-        if(Calendar.getInstance().getTime().getHours() > DANGER_HOUR)
-           Toast.makeText(MainActivity.this, "Consider avoiding drinking coffee at least 7 hours before going to bed", Toast.LENGTH_LONG).show();
+        final int DANGER_HOUR = 19;
+        if (Calendar.getInstance().getTime().getHours() > DANGER_HOUR)
+            Toast.makeText(MainActivity.this, "It's pretty late for coffee!", Toast.LENGTH_LONG).show();
 
         // Separate the cases for each type of coffee
         switch (view.getId()) {
             case R.id.frag_small_coffee_img:
 
                 Coffee smallCoffee = factory.createCoffee("SMALL");
-
-
-                if(smallCoffee != null)
-                     coffeeViewModel.insert(smallCoffee);
+                if (smallCoffee != null)
+                    coffeeViewModel.insert(smallCoffee);
 
                 Toast.makeText(MainActivity.this, "Small coffee registered", Toast.LENGTH_LONG).show();
                 break;
             case R.id.frag_medium_coffee_img:
 
                 Coffee midCoffee = factory.createCoffee("MEDIUM");
-
-                if(midCoffee != null)
+                if (midCoffee != null)
                     coffeeViewModel.insert(midCoffee);
 
                 Toast.makeText(MainActivity.this, "Medium coffee registered", Toast.LENGTH_LONG).show();
@@ -89,9 +110,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.frag_large_coffee_img:
 
                 Coffee largeCoffee = factory.createCoffee("LARGE");
-
-                if(largeCoffee != null)
-                     coffeeViewModel.insert(largeCoffee);
+                if (largeCoffee != null)
+                    coffeeViewModel.insert(largeCoffee);
 
                 Toast.makeText(MainActivity.this, "Large coffee registered", Toast.LENGTH_LONG).show();
                 break;

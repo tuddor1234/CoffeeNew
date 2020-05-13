@@ -1,4 +1,4 @@
-package com.example.coffeetracker.ui;
+package com.example.coffeetracker.components.fragments;
 
 import android.os.Bundle;
 
@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.coffeetracker.MainActivity;
 import com.example.coffeetracker.R;
 
 /**
@@ -60,14 +62,24 @@ public class CoffeePickerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_coffee_picker, container, false);
+        View view = inflater.inflate(R.layout.fragment_coffee_picker, container, false);
+        setCaffeineDetails(view);
+
+        return view;
     }
 
+    private void setCaffeineDetails(View v) {
+        MainActivity mainActivity = (MainActivity) getActivity();
 
-    public void OnTapp()
-    {
-        System.out.println("TAPPED");
+        if (mainActivity != null) {
+            TextView smallCoffeeDetails = v.findViewById(R.id.frag_small_coffee_details);
+            smallCoffeeDetails.setText("Caffeine: " + mainActivity.factory.getSMALL_CAFFEINE() + " mg");
+
+            TextView mediumCoffeeDetails = v.findViewById(R.id.frag_medium_coffee_details);
+            mediumCoffeeDetails.setText("Caffeine: " + mainActivity.factory.getMEDIUM_CAFFEINE() + " mg");
+
+            TextView largeCoffeeDetails = v.findViewById(R.id.frag_large_coffee_details);
+            largeCoffeeDetails.setText("Caffeine: " + mainActivity.factory.getLARGE_CAFFEINE() + " mg");
+        }
     }
-
-
 }

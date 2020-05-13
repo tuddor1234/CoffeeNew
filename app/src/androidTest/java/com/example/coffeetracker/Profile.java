@@ -1,8 +1,8 @@
 package com.example.coffeetracker;
 
-import android.app.Activity;
-import android.app.Application;
 import android.icu.text.SimpleDateFormat;
+
+import com.example.coffeetracker.components.utils.CoffeeFactory;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -121,7 +121,7 @@ public class Profile {
 
         Coffee coffee  = cf.createCoffee("LARGE");
 
-        CoffeeDatabase database  = CoffeeDatabase.getInstance(getApplicationContext());
+        CoffeeDatabase database  = CoffeeDatabase.getDatabase(getApplicationContext());
 
         database.coffeeDao().insert(coffee);
         System.out.println("--------------------------");
