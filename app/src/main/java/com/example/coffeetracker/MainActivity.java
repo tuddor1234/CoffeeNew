@@ -55,12 +55,7 @@ public class MainActivity extends AppCompatActivity{
         NavigationUI.setupWithNavController(navView, navController);
 
         coffeeViewModel = new ViewModelProvider(this).get(CoffeeViewModel.class);
-        coffeeViewModel.getAllCoffees().observe(this, new Observer<List<Coffee>>() {
-            @Override
-            public void onChanged(List<Coffee> coffees) {
-                System.out.println(coffees);
-            }
-        });
+
         COFFEE_TODAY = coffeeViewModel.getCoffeeNrToday();
         CAFFEINE_TODAY = coffeeViewModel.getCaffeine();
         COFFEE_WEEK = coffeeViewModel.getCoffeeNrThisWeek();
