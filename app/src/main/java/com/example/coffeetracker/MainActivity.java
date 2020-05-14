@@ -120,11 +120,11 @@ public class MainActivity extends AppCompatActivity{
 
         // Get system time when button is clicked and number of seconds for when to show notification
         long timeButtonClicked = System.currentTimeMillis();
-        long fiveSeconds = 1000 * 5;
+        long tenSeconds = 1000 * 10;
 
         // Set the actual alarm
         if (alarmManager != null) {
-            alarmManager.set(AlarmManager.RTC_WAKEUP, timeButtonClicked + fiveSeconds, pendingIntent);
+            alarmManager.set(AlarmManager.RTC_WAKEUP, timeButtonClicked + tenSeconds, pendingIntent);
         }
     }
 
